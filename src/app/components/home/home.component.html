@@ -2,5 +2,76 @@
 
     <h1 class="title">Canal de YouTube</h1>
     <hr>
+</div>
+<div class="container" *ngIf="videos.length > 0">
+
+
+    <div class="columns is-mobile is-multiline is-centered">
+        <div class="card" *ngFor="let video of videos" style="margin:10px">
+            <header class="card-header">
+                <p class="card-header-title">
+                    {{ video.title}}
+                </p>
+            </header>
+            <div class="card-image">
+                <figure class="image is-128x128">
+                    <img [src]="video.thumbnails.high.url" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="content">
+
+                    <a id="modal" (click)="verVideo(video)" class="button is-primary modal-button">Launch example modal</a>
+
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+    </div>
 
 </div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card" *ngIf="videoSel">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="content">
+                <h1>Hello World</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum
+                    mattis neque.</p>
+
+
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+            <a class="button is-success">Save changes</a>
+            <button class="button">Cerrar</button>
+        </footer>
+
+    </div>
+</div>
+
+<!-- <div id="modal" class="modal">
+
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">{{ videoSel?.title}}</p>
+        </header>
+        <section class="modal-card-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi exercitationem labore a. Fuga magni ad, totam molestiae aliquam distinctio cumque ullam quaerat explicabo tempora ratione, consectetur dolor ab esse?</p>
+            <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button modal-close">Cerrar</button>
+        </footer>
+    </div>
+
+</div> -->

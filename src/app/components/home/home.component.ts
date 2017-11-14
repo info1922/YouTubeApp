@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 // Servicio
 import { YoutubeService } from '../../services/youtube.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,6 +12,7 @@ import { YoutubeService } from '../../services/youtube.service';
 })
 export class HomeComponent implements OnInit {
   videos: any[] = [];
+  videoSel: any;
 
   constructor( public _yts: YoutubeService ) {
 
@@ -21,6 +24,22 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  verVideo (video: any) {
+
+    this.videoSel = video;
+
+    $('#modal').click(function () {
+      $('.modal').addClass('is-active');
+    });
+
+    $('.modal-close').click(function () {
+      $('.modal').removeClass('is-active');
+    });
+
+    console.log('Click');
+
   }
 
 }
