@@ -29,15 +29,6 @@ export class HomeComponent implements OnInit {
   verVideo (video: any) {
 
     this.videoSel = video;
-
-    $('#modal').click(function () {
-      $('.modal').addClass('is-active');
-    });
-
-    $('.modal-close').click(function () {
-      $('.modal').removeClass('is-active');
-    });
-
     console.log('Click');
 
   }

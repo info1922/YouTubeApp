@@ -14,3 +14,7 @@
     -webkit-transform-origin: center top;
     transform-origin: center top;
 }
+
+.text-center {
+    text-align: center;
+}

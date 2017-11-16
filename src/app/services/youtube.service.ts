@@ -19,7 +19,7 @@ export class YoutubeService {
     const parametros = new URLSearchParams();
 
     parametros.set('part', 'snippet');
-    parametros.set('maxResults', '10');
+    parametros.set('maxResults', '16');
     parametros.set('playlistId', this.playList);
     parametros.set('key', this.apikey);
 
