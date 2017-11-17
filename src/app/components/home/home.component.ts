@@ -33,4 +33,16 @@ export class HomeComponent implements OnInit {
 
   }
 
+  cerrarModal() {
+    this.videoSel = null;
+    $('#center-dialog').modal('hide');
+  }
+
+  cargarVideos () {
+    this._yts.getVideos().subscribe(videos => {
+      console.log(videos);
+      this.videos.push.apply(this.videos, videos);
+    });
+  }
+
 }

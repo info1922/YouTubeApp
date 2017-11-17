@@ -23,6 +23,11 @@ export class YoutubeService {
     parametros.set('playlistId', this.playList);
     parametros.set('key', this.apikey);
 
+    // Para cargar la siguiente pagina con mas videos
+    if ( this.nextPageToken ) {
+      parametros.set('pageToken', this.nextPageToken);
+    }
+
     return this._http.get(url, { search: parametros })
                 .map(res => {
                   console.log(res.json());

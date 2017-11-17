@@ -2,7 +2,7 @@
 
     <section class="row component section">
         <!-- Media dialog type1-->
-        <div tabindex="-1" class="modal fade" id="center-dialog" style="display: none;" aria-hidden="true">
+        <div data-backdrop="static" data-keyboard="false" tabindex="-1" class="modal fade" id="center-dialog" style="display: none;" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content" *ngIf="videoSel">
                     <div class="modal-header">
@@ -16,13 +16,13 @@
                         </div>
                     </div>
 
-                    <div class="pmd-modal-media">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{videoSel.resourceId.videoId}}" frameborder="0" allowfullscreen></iframe>
+                    <div class="pmd-modal-media text-center">
+                        <iframe width="560" height="315" [src]="videoSel.resourceId.videoId | youtubeSeguro" frameborder="0" allowfullscreen></iframe>
                     </div>
 
                     <div class="modal-body"> Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions. </div>
                     <div class="pmd-modal-action">
-                        <button type="button" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"> <i class="material-icons pmd-sm">close </i> </button>
+                        <button (click)="cerrarModal()" type="button" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"> <i class="material-icons pmd-sm">close </i> </button>
                     </div>
                 </div>
             </div>
@@ -82,6 +82,13 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="col-md-12 text-center">
+            <button (click)="cargarVideos()" type="button" class="btn pmd-btn-raised pmd-ripple-effect btn-success btn-block">cargar más videos</button>
+            <br>
+            <br>
+            <br>
         </div>
 
     </div>

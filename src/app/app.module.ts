@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 // Services
 import { YoutubeService } from './services/youtube.service';
+import { YoutubeSeguroPipe } from './pipes/youtube-seguro.pipe';
 
 
 
@@ -14,7 +15,8 @@ import { YoutubeService } from './services/youtube.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    YoutubeSeguroPipe
   ],
   imports: [
     BrowserModule,
